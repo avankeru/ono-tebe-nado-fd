@@ -46,9 +46,11 @@
 }
 
 .address-info {
+  display: flex;
   height: 98px;
   max-width: 240px;
   align-self: center;
+  flex-direction: column;
 }
 
 .address-span {
@@ -61,7 +63,6 @@
 
 .address-span__street {
   text-decoration: none;
-  white-space: pre-line;
 }
 
 /* Стилизация ЗАГОЛОВКА секции */
@@ -69,7 +70,7 @@
 .cover {
   background-size: cover;
   background-position: bottom;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url(../images/cover.jpg);
   max-height: 757px;
   padding: 165px 50px 207px 50px;
@@ -165,7 +166,7 @@
 
 .card-first {
   background-size: cover;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url(../images/card-lot-01.jpg);
 }
 
