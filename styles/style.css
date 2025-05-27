@@ -11,7 +11,7 @@
   display: flex;
   gap: 13px;
   flex-direction: row;
-  list-style: circle;
+  list-style: none;
   list-style-position: inside;
 }
 
@@ -29,13 +29,41 @@
   font-weight: 400;
 }
 
-.header__menu-item__active {
-  list-style: none;
+/* Код для активной ссылки */
+
+.header__menu-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
 }
 
-.header__menu-item__active .header__menu-link {
-  text-decoration: none;
+/* Только неактивные ссылки получают кружок и отступ */
+
+.header__menu-link {
+  display: inline-block;
+  padding-left: 16px;
 }
+
+.active {
+  text-decoration: none;
+  padding: 0;
+}
+
+.header__menu-link:not(.active)::before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  width: 6px;
+  height: 6px;
+  margin-left: -16px; /* компенсируем padding */
+  margin-right: 16px; /* расстояние между кружком и текстом */
+  border: 0.5px solid black;
+  border-radius: 50%;
+  background-color: transparent;
+  box-sizing: border-box;
+}
+
+/* конец кода */
 
 .header__logo {
   display: flex;
@@ -47,33 +75,35 @@
 
 .address-info {
   display: flex;
-  height: 98px;
-  max-width: 240px;
+  max-width: 268px;
   align-self: center;
   flex-direction: column;
-}
-
-.address-span {
   font-size: 18px;
   font-weight: 400;
   line-height: 24.3px;
+}
+
+.address-info__number,
+.addres-info__mail {
   text-decoration: underline;
   font-style: normal;
 }
 
-.address-span__street {
+.address-info__street {
   text-decoration: none;
+  font-style: normal;
 }
 
 /* Стилизация ЗАГОЛОВКА секции */
 
 .cover {
+  display: flex;
   background-size: cover;
   background-position: bottom;
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url(../images/cover.jpg);
-  max-height: 757px;
-  padding: 165px 50px 207px 50px;
+  min-height: 757px;
+  flex-direction: column;
 }
 
 .cover__title {
@@ -81,13 +111,14 @@
   font-size: 100px;
   font-weight: 700;
   line-height: 114.9px;
-  letter-spacing: calc(1em / 3);
+  letter-spacing: 30px;
   text-transform: uppercase;
-  height: 385px;
+  padding: 165px 50px 86px 50px;
 }
 
 .accent-span {
   display: block;
+  padding-bottom: 15px;
 }
 
 .text-center {
@@ -101,7 +132,8 @@
 .description {
   display: flex;
   align-items: center;
-  margin-top: 106px;
+  margin-bottom: auto;
+  align-self: center;
 }
 
 .description p {
@@ -115,28 +147,25 @@
 }
 
 .button-bet {
+  min-height: 51px;
   color: #ffffff;
-  background: none;
+  background: transparent;
   width: 256px;
   height: 51px;
   border: 1px solid #ffffff;
   margin-left: 107px;
-}
-
-.button-link {
   font-size: 22px;
-  text-decoration: none;
   font-weight: 500;
   line-height: 100%;
   text-transform: uppercase;
-  font-family: "Raleway", serif;
 }
 
 /* Стилизация Лотов */
 
 .lots {
-  min-height: 723px;
+  display: flex;
   margin: 180px 24px 0;
+  flex-direction: column;
 }
 
 .section__title {
@@ -146,7 +175,6 @@
   line-height: 100%;
   text-transform: uppercase;
   margin: 0 0 27px 40px;
-  width: 121px;
 }
 
 .lots-list {
@@ -155,29 +183,28 @@
   justify-content: center;
   gap: 25px;
   margin-bottom: 30px;
+  flex-wrap: wrap;
 }
 
 .card {
   display: flex;
   max-width: 334px;
-  height: 596px;
+  min-height: 596px;
   flex-direction: column;
+  background-size: cover;
 }
 
-.card-first {
-  background-size: cover;
+.card-cinema {
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url(../images/card-lot-01.jpg);
 }
 
-.card-second {
-  background-size: cover;
+.card-book {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url(../images/card-lot-02.jpg);
 }
 
-.card-third {
-  background-size: cover;
+.card-picture {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url(../images/card-lot-03.jpg);
 }
@@ -215,12 +242,11 @@
 
 .about {
   display: flex;
-  height: 595px;
   margin: 120px 24px 0;
   max-width: 1052px;
 }
 
-.left-column {
+.image__logo {
   display: flex;
   flex-direction: row;
   width: 287px;
@@ -242,13 +268,14 @@
   height: 114px;
 }
 
-.right-column {
+.about__info {
   display: flex;
   flex-direction: column;
   width: 100%;
   max-height: 449px;
   margin-top: auto;
   margin-left: 72px;
+  margin-bottom: 13px;
 }
 
 .about__title {
@@ -260,7 +287,7 @@
   margin-bottom: 100px;
 }
 
-.right-column p {
+.about__info p {
   font-size: 20px;
   line-height: 24px;
   &:not(:last-child) {
@@ -270,26 +297,35 @@
 
 .footer {
   display: flex;
-  margin: 180px 50px 0;
-  justify-content: space-between;
+  margin-top: 180px;
+  padding: 0 50px;
   min-height: 180px;
   align-items: flex-start;
 }
 .footer__menu-list {
-  display: flex;
-  flex-direction: column;
-  list-style: circle;
-  list-style-position: inside;
+  list-style: none;
+  justify-items: center;
 }
 
 .footer .address-info {
   margin-bottom: auto;
 }
 
+.footer__menu {
+  margin-left: 154px;
+  min-width: 163px;
+}
+
+.footer__menu-link {
+  font-size: 18px;
+  font-weight: 400;
+}
+
 .social-list {
   list-style: none;
   display: flex;
   gap: 48px;
+  margin-left: 177px;
 }
 
 .social-link {

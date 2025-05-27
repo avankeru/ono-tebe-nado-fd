@@ -13,8 +13,8 @@
     <header class="header">
       <nav class="header__menu">
         <ul class="header__menu-list">
-          <li class="header__menu-item header__menu-item__active">
-            <a href="#" class="header__menu-link">главная</a>
+          <li class="header__menu-item">
+            <a href="#" class="header__menu-link active">главная</a>
           </li>
           <li class="header__menu-item">
             <a href="#" class="header__menu-link">посмотреть лоты</a>
@@ -32,11 +32,15 @@
         />
       </a>
       <address class="address-info">
-        <span class="address-span">+9 999 555 5555</span>
-        <span class="address-span">info@sobaka.ge</span>
-        <span class="address-span address-span__street"
-          >наб. Принсенграхт 263- 265, Амстердам</span
+        <a href="tel:+9 999 555 5555" class="address-info__number"
+          >+9 999 555 5555</a
         >
+        <a href="mailto:info@sobaka.ge" class="addres-info__mail"
+          >info@sobaka.ge</a
+        >
+        <p class="address-info__street">
+          наб. Принсенграхт 263- 265, Амстердам
+        </p>
       </address>
     </header>
     <main>
@@ -48,20 +52,18 @@
         </h1>
         <div class="description">
           <p>Аукцион вещей, в которые никто не верил</p>
-          <button class="button-bet">
-            <a href="#" class="button-link"> сделать ставку </a>
-          </button>
+          <button type="button" class="button-bet">сделать ставку</button>
         </div>
       </section>
       <section class="lots">
         <h2 class="section__title">лоты</h2>
         <ul class="lots-list">
           <li class="lots-item">
-            <a class="lots-link">
-              <article class="card card-first">
-                <h4 class="card__title">
+            <a href="#" class="lots-link">
+              <article class="card card-cinema">
+                <h3 class="card__title">
                   Фильм режиссёра, который бросил киношколу
-                </h4>
+                </h3>
                 <p>
                   Не просто бросил, а ушёл с первой лекции. Какой была бы ваша
                   ставка, если бы вы не знали, что режиссёр — Пол Томас
@@ -71,11 +73,11 @@
             </a>
           </li>
           <li class="lots-item">
-            <a class="lots-link">
-              <article class="card card-second">
-                <h4 class="card__title">
+            <a href="#" class="lots-link">
+              <article class="card card-book">
+                <h1 class="card__title">
                   Книга, где описан один скучный день из жизни рекламного агента
-                </h4>
+                </h1>
                 <p>
                   Объёмом почти в тысячу страниц. Иногда без знаков препинания и
                   с переходами на древнеанглийский. В ней одновременно
@@ -88,11 +90,11 @@
             </a>
           </li>
           <li class="lots-item">
-            <a class="lots-link">
-              <article class="card card-third">
-                <h4 class="card__title">
+            <a href="#" class="lots-link">
+              <article class="card card-picture">
+                <h1 class="card__title">
                   Картина, которую повторит даже 5-летний сын маминой подруги
-                </h4>
+                </h1>
                 <p>
                   Ну действительно, там линия, тут кружочек, а здесь и вовсе
                   что-то похожее на инфузорию-туфельку. Никаких полей, лесов,
@@ -106,7 +108,7 @@
         <a href="#" class="lots-link__more">посмотреть больше</a>
       </section>
       <section class="about content-section">
-        <div class="left-column">
+        <div class="image__logo">
           <div class="about__logo">
             <img
               class="about__logo-image"
@@ -115,7 +117,7 @@
             />
           </div>
         </div>
-        <div class="right-column">
+        <div class="about__info">
           <h2 class="about__title">Об аукционе</h2>
           <p>
             Здесь вы не встретите очередное пафосное собрание невероятно
@@ -137,22 +139,26 @@
     </main>
     <footer class="footer">
       <address class="address-info">
-        <span class="address-span">+9 999 555 5555</span>
-        <span class="address-span">info@sobaka.ge</span>
-        <span class="address-span address-span__street"
-          >наб. Принсенграхт 263- 265, Амстердам</span
+        <a href="tel:+9 999 555 5555" class="address-info__number"
+          >+9 999 555 5555</a
         >
+        <a href="mailto:info@sobaka.ge" class="addres-info__mail"
+          >info@sobaka.ge</a
+        >
+        <p class="address-info__street">
+          наб. Принсенграхт 263- 265, Амстердам
+        </p>
       </address>
-      <nav class="header__menu">
+      <nav class="footer__menu">
         <ul class="footer__menu-list">
-          <li class="header__menu-item header__menu-item__active">
-            <a href="#" class="header__menu-link">главная</a>
+          <li class="footer__menu-item">
+            <a href="#" class="footer__menu-link active">главная</a>
           </li>
-          <li class="header__menu-item">
-            <a href="#" class="header__menu-link">посмотреть лоты</a>
+          <li class="footer__menu-item">
+            <a href="#" class="footer__menu-link">посмотреть лоты</a>
           </li>
-          <li class="header__menu-item">
-            <a href="#" class="header__menu-link">об аукционе</a>
+          <li class="footer__menu-item">
+            <a href="#" class="footer__menu-link">об аукционе</a>
           </li>
         </ul>
       </nav>
