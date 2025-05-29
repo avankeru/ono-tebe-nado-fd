@@ -11,13 +11,21 @@
   display: flex;
   gap: 13px;
   flex-direction: row;
-  list-style: none;
+  list-style: circle;
   list-style-position: inside;
+}
+
+.header__menu-list .header__menu-item:first-child {
+  list-style: none;
 }
 
 .header__menu-item {
   align-self: center;
   white-space: nowrap;
+}
+
+.header__menu-item::marker {
+  margin-right: 13px;
 }
 
 .header__menu {
@@ -45,20 +53,6 @@
 
 .active {
   text-decoration: none;
-  padding: 0;
-}
-
-.header__menu-link:not(.active)::before {
-  content: "";
-  display: inline-block;
-  vertical-align: middle;
-  width: 6px;
-  height: 6px;
-  margin-right: 16px; /* расстояние между кружком и текстом */
-  border: 0.5px solid black;
-  border-radius: 50%;
-  background-color: transparent;
-  box-sizing: border-box;
 }
 
 /* конец кода */
@@ -101,6 +95,7 @@
     url(../images/cover.jpg);
   min-height: 757px;
   flex-direction: column;
+  padding: 165px 50px 50px;
 }
 
 .cover__title {
@@ -110,27 +105,28 @@
   line-height: 1.15;
   letter-spacing: 30px;
   text-transform: uppercase;
-  padding: 165px 50px 106px 50px;
+  margin-bottom: 106px;
+}
+
+.accent-letter {
+  letter-spacing: 0;
 }
 
 .accent-span:last-child {
-  padding-bottom: 0;
+  margin-bottom: 0;
 }
 
 .accent-span {
   display: block;
-  padding-bottom: 20px;
-  /* width: max-content; */
+  margin-bottom: 20px;
 }
 
 .text-center {
   text-align: center;
-  padding-left: 32.5px;
 }
 
 .text-right {
   text-align: right;
-  padding-left: 615px;
 }
 
 .description {
@@ -155,7 +151,6 @@
   color: #ffffff;
   background: transparent;
   width: 256px;
-  height: 51px;
   border: 1px solid #ffffff;
   margin-left: 107px;
   font-size: 22px;
@@ -289,7 +284,7 @@
   font-weight: 700;
   text-transform: uppercase;
   margin-right: 402px;
-  line-height: 100%;
+  /* line-height: 100%; */
 }
 
 .about__info p {
@@ -302,7 +297,7 @@
 
 .footer {
   display: flex;
-  margin-top: 180px;
+  margin-top: 170px;
   padding: 0 50px;
   min-height: 180px;
   align-items: flex-start;
